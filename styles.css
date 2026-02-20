@@ -1,0 +1,439 @@
+/* ============================================
+   ЗОВНІШНІЙ CSS ФАЙЛ (styles.css)
+   Демонстрація різних типів селекторів
+   
+   ЗАВДАННЯ:
+   1. Різні типи селекторів з властивостями для тексту
+   2. Вбудовані та зовнішні CSS
+   3. Конфліктні стилі та правила вирішення
+   4. Властивості блоку елемента
+   5. display: inline, block, inline-block
+   ============================================ */
+
+/* 1. СЕЛЕКТОР ІМЕНІ ЕЛЕМЕНТА (теговий селектор) */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1 {
+    color: #6c5ce7;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+h2 {
+    color: #a29bfe;
+    font-size: 1.8em;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: #a29bfe;
+    text-decoration-thickness: 2px;
+}
+
+/* Заголовок "Рекомендовані продукти" без підкреслення */
+#products > h2 {
+    text-decoration: none;
+}
+
+h3 {
+    color: #74b9ff;
+    font-size: 1.4em;
+    font-weight: 500;
+    font-style: italic;
+}
+
+p {
+    text-indent: 20px;
+    font-size: 1.1em;
+    text-align: justify;
+    margin: 15px 0;
+}
+
+/* 2. СЕЛЕКТОР УНІВЕРСАЛЬНОГО КЛАСУ */
+.highlight {
+    background-color: #ffeaa7;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.special-text {
+    color: #e17055;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+/* 3. СЕЛЕКТОР ТЕГОВОГО КЛАСУ */
+p.intro {
+    font-size: 1.2em;
+    color: #2d3436;
+    font-weight: 500;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+a.link-style {
+    color: #0984e3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.link-style:hover {
+    color: #74b9ff;
+    text-decoration: underline;
+}
+
+/* 4. СЕЛЕКТОР ІДЕНТИФІКАТОРА */
+#tips {
+    background-color: #e8f5e9;
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 5px solid #00b894;
+    border-radius: 8px;
+}
+
+#products {
+    background-color: #fff3e0;
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 5px solid #fdcb6e;
+    border-radius: 8px;
+}
+
+#community {
+    background-color: #e3f2fd;
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 5px solid #74b9ff;
+    border-radius: 8px;
+}
+
+/* 5. ПСЕВДОСЕЛЕКТОРИ */
+a:hover {
+    color: #6c5ce7;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+a:visited {
+    color: #a29bfe;
+}
+
+a:active {
+    color: #e17055;
+}
+
+li:first-child {
+    font-weight: bold;
+    color: #00b894;
+}
+
+li:last-child {
+    font-style: italic;
+    color: #6c5ce7;
+}
+
+/* first-line для першого параграфа в кожному розділі */
+#tips > p:first-of-type::first-line,
+#products > p:first-of-type::first-line,
+#community > p:first-of-type::first-line {
+    font-weight: bold;
+    color: #2d3436;
+}
+
+/* Зменшення відстані між розділеними параграфами */
+#tips > p:first-of-type,
+#products > p:first-of-type,
+#community > p:first-of-type {
+    margin-bottom: 5px;
+}
+
+#tips > p:nth-of-type(2),
+#products > p:nth-of-type(2),
+#community > p:nth-of-type(2) {
+    margin-top: 5px;
+}
+
+/* p::first-letter - прибрано */
+
+/* 6. КОНТЕКСТНІ СЕЛЕКТОРИ */
+header p {
+    color: #636e72;
+    font-size: 1.15em;
+    text-align: center;
+    text-indent: 0;
+}
+
+section p {
+    color: #2d3436;
+    text-align: left;
+}
+
+/* nav a стилі застосовуються через display: inline-block вище */
+
+main section {
+    margin-bottom: 30px;
+}
+
+ul li {
+    list-style-type: square;
+    margin: 10px 0;
+    padding-left: 10px;
+}
+
+/* Виняток для списку продуктів */
+.products-list li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* 7. ВЛАСТИВОСТІ БЛОКУ ЕЛЕМЕНТА */
+section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border: 2px solid #dfe6e9;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header {
+    width: 100%;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #b8a9e8 0%, #d4c5f0 100%);
+    color: #2d3436;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #a29bfe;
+}
+
+footer {
+    width: 100%;
+    padding: 20px;
+    background-color: #2d3436;
+    color: #dfe6e9;
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+p.inline-paragraph {
+    display: inline;
+    margin: 0 5px;
+}
+
+
+section img {
+    display: block;
+    margin: 15px auto;
+    border-radius: 8px;
+}
+
+.products-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.product-card {
+    flex: 0 0 calc(33.333% - 20px);
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 2px solid #dfe6e9;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Назви товарів як лінки */
+.product-link {
+    display: block;
+    color: #0984e3;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.product-link:hover {
+    color: #74b9ff;
+    background-color: #e3f2fd;
+    text-decoration: underline;
+}
+
+.product-card img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+}
+
+nav a {
+    display: inline-block;
+    color: #2d3436;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1em;
+    padding: 12px 20px;
+    margin: 0 8px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    border: 2px solid #a29bfe;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #a29bfe;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* ============================================
+   СТИЛІ ДЛЯ СТОРІНОК ПРОДУКТІВ
+   ============================================ */
+
+.product-detail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: flex-start;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border: 2px solid #dfe6e9;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.product-image-container {
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+    text-align: center;
+}
+
+.product-main-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.product-main-image:hover {
+    transform: scale(1.02);
+}
+
+.product-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.product-info h2 {
+    color: #a29bfe;
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-decoration: none;
+    border-bottom: 3px solid #a29bfe;
+    padding-bottom: 10px;
+}
+
+.product-info p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.brand-link {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-left: 4px solid #a29bfe;
+    border-radius: 5px;
+}
+
+.external-link {
+    color: #0984e3;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.external-link:hover {
+    color: #74b9ff;
+    text-decoration: underline;
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+    .product-detail {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .product-image-container {
+        max-width: 100%;
+    }
+    
+    .product-main-image {
+        max-width: 100%;
+    }
+}
+
+/* ============================================
+   ПОЯСНЕННЯ ПРАВИЛ КАСКАДУ CSS:
+   
+   1. ДЖЕРЕЛА СТИЛІВ (в порядку пріоритету):
+      - Зовнішній CSS файл (найнижчий)
+      - Вбудовані стилі в <head> (середній)
+      - Inline стилі в атрибуті style (найвищий)
+      - !important (перекриває все)
+   
+   2. СПЕЦИФІЧНІСТЬ СЕЛЕКТОРІВ:
+      - Елемент (p, h1): 1 бал
+      - Клас (.class): 10 балів
+      - ID (#id): 100 балів
+      - Inline style: 1000 балів
+      - !important: перекриває все
+   
+   3. ПРИКЛАД КОНФЛІКТУ:
+      Зовнішній CSS: h1 { color: #6c5ce7; }
+      Вбудований:    h1 { color: #e17055; }
+      Результат:      #e17055 (вбудований має пріоритет)
+      
+      Але якщо вбудований має !important:
+      Вбудований:    h1 { color: #ffffff !important; }
+      Результат:     #ffffff (перекриває все)
+   ============================================ */
